@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="stage" prefHeight="557.0" prefWidth="1106.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculadora.LayoutController">
+   <top>
+      <MenuBar prefHeight="25.0" prefWidth="825.0" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Ficheiro">
+            <items>
+              <MenuItem fx:id="gravarcomo" mnemonicParsing="false" onAction="#gravacomo" text="Gravar como..." />
+                  <MenuItem fx:id="gravar" mnemonicParsing="false" onAction="#grava" text="Gravar" />
+                  <MenuItem fx:id="fechar" mnemonicParsing="false" onAction="#fecha" text="Fechar" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Ajuda">
+            <items>
+              <MenuItem fx:id="botao" mnemonicParsing="false" onAction="#botoes" text="Botões" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <left>
+      <BorderPane BorderPane.alignment="CENTER">
+         <center>
+              <BorderPane prefHeight="568.0" prefWidth="625.0">
+               <center>
+                  <TabPane prefHeight="529.0" prefWidth="489.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="Calculadora">
+                           <content>
+                              <BorderPane>
+                                 <center>
+                                    <TableView fx:id="calculos" prefHeight="458.0" prefWidth="637.0" BorderPane.alignment="CENTER">
+                                      <columns>
+                                        <TableColumn fx:id="operacao" prefWidth="415.0" text="OPERAÇÃO" />
+                                        <TableColumn fx:id="resultado" prefWidth="217.0" text="RESULTADO" />
+                                      </columns>
+                                    </TableView>
+                                 </center>
+                                 <bottom>
+                                        <Button fx:id="calcular" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#calculo" prefHeight="45.0" prefWidth="626.0" text="CALCULAR" BorderPane.alignment="CENTER">
+                                            <graphic>
+                                                <TextField fx:id="conta" prefHeight="36.0" prefWidth="530.0">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font></TextField>
+                                            </graphic>
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                        </Button>
+                                 </bottom>
+                              </BorderPane>
+                           </content>
+                      </Tab>
+                      <Tab text="Gráfico Cartesiano">
+                           <content>
+                              <BorderPane>
+                                 <center>
+                                  <LineChart fx:id="eixoxy" prefHeight="472.0" prefWidth="626.0">
+                                    <xAxis>
+                                        <NumberAxis label="x" lowerBound="-100" />
+                                    </xAxis>
+                                    <yAxis>
+                                        <NumberAxis label="fx" lowerBound="-100.0" side="LEFT" />
+                                    </yAxis>
+                                  </LineChart>
+                                 </center>
+                                 <bottom>
+                                    <Button fx:id="desenhar" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#desenha" prefHeight="45.0" prefWidth="626.0" text="DESENHAR" BorderPane.alignment="CENTER">
+                                       <graphic>
+                                          <TextField fx:id="funcao" prefHeight="36.0" prefWidth="527.0">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font></TextField>
+                                       </graphic>
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Button>
+                                 </bottom>
+                              </BorderPane>
+                           </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+               </center>
+              </BorderPane>
+         </center>
+      </BorderPane>
+   </left>
+   <right>
+      <BorderPane BorderPane.alignment="CENTER">
+         <center>
+              <GridPane alignment="TOP_RIGHT" prefHeight="517.0" prefWidth="476.0">
+                  <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  </columnConstraints>
+                  <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  </rowConstraints>
+                  <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#aab1a1" height="529.0" stroke="BLACK" strokeType="INSIDE" width="472.0" GridPane.rowIndex="4" />
+                      <Button fx:id="apagar" mnemonicParsing="false" onAction="#apagar" prefHeight="38.0" prefWidth="37.0" style="-fx-background-color: F44E3F;" text="C" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                      <Button fx:id="dir" mnemonicParsing="false" onAction="#dir" prefHeight="38.0" prefWidth="38.0" text="&gt;" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                      <Button fx:id="sen" mnemonicParsing="false" onAction="#sen" prefHeight="31.0" prefWidth="78.0" style="-fx-background-color: ffa561;" text="sen(x)" GridPane.columnIndex="8" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                      <Button fx:id="cos" mnemonicParsing="false" onAction="#cos" prefHeight="31.0" prefWidth="79.0" style="-fx-background-color: ffa561;" text="cos(x)" GridPane.columnIndex="8" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                      <Button fx:id="tan" mnemonicParsing="false" onAction="#tan" prefHeight="32.0" prefWidth="79.0" style="-fx-background-color: ffa561;" text="tan(x)" GridPane.columnIndex="8" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                      <Button fx:id="arctan" mnemonicParsing="false" onAction="#arctan" prefHeight="32.0" prefWidth="83.0" style="-fx-background-color: F88933;" text="arctan(x)" GridPane.columnIndex="8" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+                  <Button fx:id="arcos" layoutX="121.0" layoutY="180.0" mnemonicParsing="false" onAction="#arccos" prefHeight="32.0" prefWidth="81.0" style="-fx-background-color: F88933;" text="arccos(x)" GridPane.columnIndex="8" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                  <Button fx:id="arcsen" layoutX="121.0" layoutY="127.0" mnemonicParsing="false" onAction="#arcsen" prefHeight="32.0" prefWidth="82.0" style="-fx-background-color: F88933;" text="arcsen(x)" GridPane.columnIndex="8" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                  <Button fx:id="num1" layoutX="227.0" layoutY="256.0" mnemonicParsing="false" onAction="#num1" prefHeight="42.0" prefWidth="36.0" style="-fx-background-color: FAF3DD;" text="1" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                  <Button fx:id="igual" layoutX="183.0" layoutY="80.0" mnemonicParsing="false" onAction="#igual" prefHeight="39.0" prefWidth="75.0" style="-fx-background-color: F44E3F;" text="=" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+                  <Button fx:id="num2" mnemonicParsing="false" onAction="#num2" prefHeight="42.0" prefWidth="36.0" style="-fx-background-color: FAF3DD;" text="2" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                  <Button fx:id="num3" mnemonicParsing="false" onAction="#num3" prefHeight="42.0" prefWidth="36.0" style="-fx-background-color: FAF3DD;" text="3" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                  <Button fx:id="num4" mnemonicParsing="false" onAction="#num4" prefHeight="42.0" prefWidth="36.0" style="-fx-background-color: FAF3DD;" text="4" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                  <Button fx:id="num5" mnemonicParsing="false" onAction="#num5" prefHeight="42.0" prefWidth="36.0" style="-fx-background-color: FAF3DD;" text="5" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                  <Button fx:id="num6" mnemonicParsing="false" onAction="#num6" prefHeight="42.0" prefWidth="36.0" style="-fx-background-color: FAF3DD;" text="6" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                  <Button fx:id="num7" mnemonicParsing="false" onAction="#num7" prefHeight="42.0" prefWidth="36.0" style="-fx-background-color: FAF3DD;" text="7" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Button fx:id="num8" mnemonicParsing="false" onAction="#num8" prefHeight="42.0" prefWidth="36.0" style="-fx-background-color: FAF3DD;" text="8" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Button fx:id="num9" mnemonicParsing="false" onAction="#num9" prefHeight="42.0" prefWidth="36.0" style="-fx-background-color: FAF3DD;" text="9" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Button fx:id="dirigual" mnemonicParsing="false" onAction="#dirigual" prefHeight="38.0" prefWidth="38.0" text="≥" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                  <Button fx:id="esqigual" mnemonicParsing="false" onAction="#esqigual" prefHeight="38.0" prefWidth="38.0" text="≤" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Button fx:id="esq" mnemonicParsing="false" onAction="#esq" prefHeight="38.0" prefWidth="38.0" text="&lt;" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                  <Button fx:id="exp" mnemonicParsing="false" onAction="#exp" prefHeight="38.0" prefWidth="38.0" text="^" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                  <Button fx:id="log" mnemonicParsing="false" onAction="#log" prefHeight="38.0" prefWidth="38.0" text="log" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                  <Button fx:id="pi" mnemonicParsing="false" onAction="#pi" prefHeight="38.0" prefWidth="38.0" text="π" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                  <Button fx:id="e" mnemonicParsing="false" onAction="#e" prefHeight="38.0" prefWidth="38.0" text="e" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+                  <Button fx:id="paresq" mnemonicParsing="false" onAction="#paresq" prefHeight="38.0" prefWidth="38.0" text="(" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                  <Button fx:id="pardir" mnemonicParsing="false" onAction="#pardir" prefHeight="38.0" prefWidth="38.0" text=")" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                  <Button fx:id="div" mnemonicParsing="false" onAction="#div" prefHeight="38.0" prefWidth="38.0" text="/" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Button fx:id="mul" mnemonicParsing="false" onAction="#mul" prefHeight="38.0" prefWidth="38.0" text="x" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                  <Button fx:id="sub" mnemonicParsing="false" onAction="#sub" prefHeight="38.0" prefWidth="38.0" text="-" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                  <Button fx:id="soma" mnemonicParsing="false" onAction="#soma" prefHeight="38.0" prefWidth="38.0" text="+" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                  <Button fx:id="ponto" mnemonicParsing="false" onAction="#ponto" prefHeight="38.0" prefWidth="38.0" text="." GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                  <Button fx:id="num0" mnemonicParsing="false" onAction="#num0" prefHeight="42.0" prefWidth="36.0" style="-fx-background-color: FAF3DD;" text="0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                  <Button mnemonicParsing="false" onAction="#x" prefHeight="38.0" prefWidth="38.0" text="x" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="6" fx:id="x" />
+                  <Button fx:id="raiz" mnemonicParsing="false" onAction="#raiz" prefHeight="38.0" prefWidth="38.0" text="√" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+                  </children>
+              </GridPane>
+         </center>
+      </BorderPane>
+   </right>
+</BorderPane>
